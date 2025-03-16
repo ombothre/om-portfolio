@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function About() {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.1
   });
 
   return (
@@ -19,18 +19,21 @@ export default function About() {
       >
         <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
         <div className="max-w-3xl mx-auto">
-          <p className="text-lg mb-6 text-gray-800 dark:text-zinc-300">
-            I am a Computer Engineering student specializing in Data Science and Language Processing, with a strong focus on AI/ML development. My expertise spans across web development, machine learning, and software engineering, allowing me to build comprehensive solutions that leverage cutting-edge technologies.
+          <p className="text-lg mb-6 text-gray-800 dark:text-zinc-300 text-justify">
+            I am a Computer Engineering student specializing in Data Science and
+            AI/ML development, with expertise in web development, machine
+            learning, and software engineering. My focus lies in building
+            innovative solutions that leverage cutting-edge technologies.
           </p>
-          <p className="text-lg mb-6 text-gray-800 dark:text-zinc-300">
-            Currently pursuing my Bachelor of Technology in Computer Engineering at Pillai College of Engineering, I am set to graduate in May 2025. Throughout my academic journey, I have consistently applied theoretical knowledge to practical projects, resulting in award-winning applications and innovative solutions.
-          </p>
-          <p className="text-lg text-gray-800 dark:text-zinc-300">
-            I am passionate about exploring the intersection of artificial intelligence and practical applications. My goal is to create technology that solves real-world problems while continuously expanding my knowledge and skills in this rapidly evolving field.
+          <p className="text-lg text-gray-800 dark:text-zinc-300 text-justify">
+            Currently pursuing my B.Tech at Pillai College of Engineering, I
+            apply theoretical knowledge to practical projects, resulting in
+            award-winning applications. Passionate about AI’s real-world impact,
+            I strive to develop technology that drives meaningful change while
+            continuously expanding my expertise.
           </p>
         </div>
       </motion.div>
     </div>
   );
 }
-

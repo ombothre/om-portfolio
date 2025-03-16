@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
+import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -55,7 +56,8 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0 font-bold text-xl">
+          <div className="flex-shrink-0 font-bold text-xl flex items-center">
+          <Image src="/logo.png" alt="Logo" width={40} height={40} className="mr-2" />
             <a href="#hero" className="text-black dark:text-white">
               Om Bothre
             </a>
@@ -80,7 +82,7 @@ export default function Navbar() {
 
           <div className="flex items-center">
             <Button variant="ghost" size="icon" onClick={toggleTheme} className="mr-2" aria-label="Toggle theme">
-              {mounted && theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {mounted && theme === "dark" ? <Sun className="h-5 w-5 transition-transform duration-300" /> : <Moon className="h-5 w-5 transition-transform duration-300" />}
             </Button>
 
             <button
@@ -110,7 +112,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
                   activeSection === item.name.toLowerCase()
                     ? "text-black dark:text-white bg-zinc-100 dark:bg-black"
                     : "text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white"

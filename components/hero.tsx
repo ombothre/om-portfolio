@@ -59,7 +59,7 @@ export default function Hero() {
 
             <div className="flex justify-center gap-6 mb-10">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/om-bothre/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -69,7 +69,7 @@ export default function Hero() {
                 </Button>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/ombothre"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -79,10 +79,10 @@ export default function Hero() {
                 </Button>
               </a>
               <a
-                href="https://leetcode.com"
+                href="https://linktr.ee/ombothre"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LeetCode"
+                aria-label="LinkTree"
               >
                 <Button variant="outline" size="icon" className="rounded-full">
                   <ExternalLink className="h-5 w-5" />
