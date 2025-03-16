@@ -57,7 +57,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 font-bold text-xl flex items-center">
-          <Image src="/logo.png" alt="Logo" width={40} height={40} className="mr-2" />
+            <Image src="/logo.png" alt="Logo" width={40} height={40} className="mr-2" />
             <a href="#hero" className="text-black dark:text-white">
               Om Bothre
             </a>

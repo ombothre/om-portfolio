@@ -22,14 +22,15 @@ export default function ParticleBackground() {
     }
 
     class Particle {
-      x: number
-      y: number
-      size: number
-      speedX: number
-      speedY: number
-      color: string
+      x!: number
+      y!: number
+      size!: number
+      speedX!: number
+      speedY!: number
+      color!: string
 
       constructor() {
+        if (!canvas) return
         this.x = Math.random() * canvas.width
         this.y = Math.random() * canvas.height
         this.size = Math.random() * 3 + 1
@@ -42,14 +43,17 @@ export default function ParticleBackground() {
         this.x += this.speedX
         this.y += this.speedY
 
-        if (this.x > canvas.width) this.x = 0
-        else if (this.x < 0) this.x = canvas.width
+        if (canvas) {
+          if (this.x > canvas.width) this.x = 0
+          else if (this.x < 0) this.x = canvas.width
 
-        if (this.y > canvas.height) this.y = 0
-        else if (this.y < 0) this.y = canvas.height
+          if (this.y > canvas.height) this.y = 0
+          else if (this.y < 0) this.y = canvas.height
+        }
       }
 
       draw() {
+        if (!ctx) return
         ctx.fillStyle = this.color
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
@@ -108,6 +112,6 @@ export default function ParticleBackground() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full dark:filter dark:invert" />
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full dark:filter dark:invert transition-colors duration-300" />
 }
 
