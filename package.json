@@ -2,9 +2,12 @@
   "name": "demo",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "node --max_old_space_size=4096 node_modules/.bin/next build",
     "start": "next start",
     "lint": "next lint"
   },

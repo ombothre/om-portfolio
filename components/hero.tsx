@@ -12,7 +12,7 @@ import {
   // Mail,
   // Phone
 } from "lucide-react";
-// import ParticleBackground from "./particle-background"
+import ParticleBackground from "./particle-background"; // Uncommented
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,9 +21,28 @@ export default function Hero() {
     setIsLoaded(true);
   }, []);
 
+  useEffect(() => {
+    const handleSmoothScroll = (event) => {
+      if (event.target.tagName === 'A' && event.target.hash) {
+        event.preventDefault();
+        const targetId = event.target.hash.slice(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleSmoothScroll);
+
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+    };
+  }, []);
+
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* <ParticleBackground /> */}
+      <ParticleBackground className="absolute inset-0 -z-10 opacity-90" /> {/* Added opacity */}
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
         <div className="flex flex-col items-center justify-center gap-12 md:gap-16">
