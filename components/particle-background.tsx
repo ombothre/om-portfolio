@@ -2,7 +2,12 @@
 
 import { useEffect, useRef } from "react"
 
-export default function ParticleBackground() {
+// Add props interface with className
+interface ParticleBackgroundProps {
+  className?: string;
+}
+
+export default function ParticleBackground({ className }: ParticleBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -112,6 +117,6 @@ export default function ParticleBackground() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full dark:filter dark:invert transition-colors duration-300" />
+  // Apply the className prop along with the default classes
+  return <canvas ref={canvasRef} className={`absolute inset-0 w-full h-full dark:filter dark:invert transition-colors duration-300 ${className || ''}`} />
 }
-

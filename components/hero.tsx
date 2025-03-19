@@ -22,10 +22,10 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const handleSmoothScroll = (event) => {
-      if (event.target.tagName === 'A' && event.target.hash) {
+    const handleSmoothScroll = (event: React.MouseEvent<HTMLElement> | MouseEvent) => {
+      if ((event.target as HTMLElement).tagName === 'A' && (event.target as HTMLAnchorElement).hash) {
         event.preventDefault();
-        const targetId = event.target.hash.slice(1);
+        const targetId = (event.target as HTMLAnchorElement).hash.slice(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' });
