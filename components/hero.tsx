@@ -12,7 +12,6 @@ import {
   // Mail,
   // Phone
 } from "lucide-react";
-import ParticleBackground from "./particle-background"; // Uncommented
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -42,8 +41,6 @@ export default function Hero() {
 
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      <ParticleBackground className="absolute inset-0 -z-10 opacity-90" /> {/* Added opacity */}
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
         <div className="flex flex-col items-center justify-center gap-12 md:gap-16">
           <motion.div
